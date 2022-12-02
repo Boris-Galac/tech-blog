@@ -7,10 +7,10 @@
             <div>
                 <h2 class="footer__heading h2--heading">quick links</h2>
                 <nav class="footer__nav">
-                    <ul><li><a class="footer__link" href="index.html">home</a></li></ul>
-                    <ul><li><a class="footer__link" href="blog.html">blog</a></li></ul>
+                    <ul><li><a class="footer__link" href="<?php echo site_url() ?>">home</a></li></ul>
+                    <ul><li><a class="footer__link" href="<?php echo site_url('blog') ?>">blog</a></li></ul>
                     <ul><li><a class="footer__link" href="#">projects</a></li></ul>
-                    <ul><li><a class="footer__link" href="#">about</a></li></ul>
+                    <ul><li><a class="footer__link" href="<?php echo site_url('about') ?>">about</a></li></ul>
                 </nav>
             </div>
             <div>
