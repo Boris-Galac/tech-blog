@@ -1,0 +1,41 @@
+@media (min-width: 60rem) {
+  .d-hidden {
+    display: none;
+  }
+}
+.blog-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.separator {
+  border-right: 2px solid #737373;
+  height: 0.7rem;
+}
+.tag {
+  color: var(--white);
+  padding: 0.5rem;
+  background-color: var(--neutral-600);
+  border-radius: 100vmax;
+  cursor: pointer;
+  transition: 0.2s;
+  width: max-content;
+}
+.wp-img-blog {
+  margin-bottom: 3rem;
+}
+.tag a {
+  color: var(--white);
+}
+.tag:hover {
+  background-color: var(--neutral-700);
+}
+.time {
+  color: var(--neutral-600);
+  font-weight: 500;
+}
+.box {
+  height: 73vh;
+  display: grid;
+  place-content: center;
+}

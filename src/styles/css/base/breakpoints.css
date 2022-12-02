@@ -1,0 +1,23 @@
+/* breakpoints */
+
+.container {
+  margin-inline: auto;
+  width: calc(100% - 32px);
+  display: flow-root;
+}
+
+/* 640px */
+
+@media (min-width: 40rem) {
+  .container {
+    width: calc(100% - 128px);
+  }
+}
+
+/* 1440px */
+
+@media (min-width: 90rem) {
+  .container {
+    width: calc(100% - 512px);
+  }
+}

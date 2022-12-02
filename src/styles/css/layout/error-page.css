@@ -1,0 +1,23 @@
+.error-page {
+  height: 100vh;
+  background-color: rgb(180, 211, 228);
+  display: grid;
+  place-items: center;
+}
+.error-page__msg {
+  position: relative;
+  color: #454d57;
+  font-size: clamp(2rem, 15vw, 8rem);
+  font-weight: 700;
+}
+.error-page__msg::after {
+  content: attr(data-text);
+  position: absolute;
+  color: #454d57;
+  font-weight: 500;
+  font-size: 1rem;
+  width: max-content;
+  bottom: -1rem;
+  left: 0.5rem;
+  text-transform: uppercase;
+}

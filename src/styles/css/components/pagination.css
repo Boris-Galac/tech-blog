@@ -1,0 +1,40 @@
+/* pagination */
+
+.pagination {
+  margin-block: 4rem;
+}
+.pagination__wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+}
+.pagination .pagination__wrapper > * {
+  padding-inline: 0.875rem;
+  padding-block: 0.5rem;
+  cursor: pointer;
+  background-color: var(--white);
+  color: var(--neutral-600);
+  border: 2px solid #d2d9e0;
+  height: max-content;
+}
+.pagination .pagination__wrapper > *:hover {
+  background-color: var(--neutral-100);
+}
+.pagination .pagination__wrapper > *:first-child {
+  border-radius: 4px 0 0 4px;
+}
+.pagination .pagination__wrapper > *:last-child {
+  border-radius: 0 4px 4px 0;
+}
+.pagination button.active:hover {
+  background-color: var(--neutral-700);
+}
+.page-numbers.current {
+  border: 2px solid #384655;
+  background-color: var(--neutral-600);
+  color: var(--white);
+  transition: 0.2s;
+}
+.page-numbers.current:hover {
+  background-color: var(--neutral-700);
+}

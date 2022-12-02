@@ -1,0 +1,21 @@
+.second-main {
+  background-color: var(--neutral-100);
+}
+.all-blogs__wrapper {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+.all-blogs__heading {
+  margin-block: 4rem;
+}
+@media (min-width: 60rem) {
+  .all-blog__container {
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 4fr 2fr;
+  }
+  .all-blogs__wrapper > :first-child {
+    grid-column: span 2;
+  }
+}

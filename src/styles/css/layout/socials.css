@@ -1,0 +1,44 @@
+.socials {
+  position: relative;
+  background-color: var(--neutral-700);
+  display: grid;
+  place-items: center;
+  isolation: isolate;
+}
+.socials:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  background: url("/wp-content/themes/tech-blog/src/styles/images/spider-web.svg")
+    no-repeat left center/cover;
+  inset: 0;
+  width: 100%;
+  opacity: 0.6;
+}
+.socials__wrapper-icons a {
+  display: var(--d-grid);
+  place-items: center;
+  transition: 1s;
+}
+.socials__wrapper-icons a:hover {
+  transform: rotatey(180deg);
+}
+.socials__heading {
+  color: var(--white);
+  border: none;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+.socials__wrapper-icons > :not(:first-child) {
+  display: var(--d-flex);
+  gap: 1.5rem;
+}
+.socials__wrapper-icons {
+  margin-bottom: 4rem;
+}
+.separator {
+  height: 2rem;
+  width: 3px;
+  margin-block: auto;
+  background-color: var(--white);
+}

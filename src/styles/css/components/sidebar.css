@@ -1,0 +1,51 @@
+.aside {
+  background-color: var(--neutral-500);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: max-content;
+}
+.aside__categories,
+.aside__tags {
+  border: 1px solid #ffffff4a;
+  border-radius: 5px;
+  padding: 1rem;
+}
+.aside__search-input {
+  inset: 0;
+  display: grid;
+  margin-inline: auto;
+  margin-bottom: 1rem;
+  width: 100%;
+  padding: 0.4rem;
+  border-radius: 100vmax;
+  border: 2px solid var(--neutral-600);
+  background: url(/wp-content/themes/tech-blog/src/styles/icons/search.svg)
+    no-repeat scroll 10px 5px;
+  background-size: 1.5rem;
+  background-color: #fff;
+  padding-left: 3rem;
+}
+.aside__category-list {
+  display: grid;
+  gap: 0.5rem;
+}
+.aside__category-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  color: var(--white);
+  border-bottom: 1px dashed hsla(0, 0%, 100%, 0.5);
+}
+.aside__tag-wrapper {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 60rem) {
+  .aside {
+    height: 100%;
+  }
+}

@@ -1,0 +1,74 @@
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  background: url("/wp-content/themes/tech-blog/src/styles/images/hero-img.jpg")
+    no-repeat center center/cover;
+  isolation: isolate;
+  background-attachment: fixed;
+}
+.hero-banner::after {
+  position: absolute;
+  content: "";
+  inset: 0;
+  background-color: var(--white);
+  opacity: 0.6;
+  z-index: -1;
+}
+.hero-banner::before {
+  position: absolute;
+  content: "";
+  height: 80vh;
+  width: 2px;
+  background: rgba(0, 0, 0, 0.431);
+  left: 1rem;
+  transform: translateY(-50%);
+  top: 50%;
+}
+.hero-banner .container {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  user-select: none;
+}
+.hero-banner__headline-wrapper {
+  background-color: rgba(255, 255, 255, 0.453);
+  backdrop-filter: blur(10px);
+  padding: 2rem;
+  animation: headline 4s forwards;
+}
+
+@keyframes headline {
+  0% {
+    opacity: 0;
+    transform: scale(0.1);
+  }
+  70% {
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.hero-banner__headline {
+  margin-bottom: 0.5rem;
+}
+.hero-banner__subheadline {
+  color: var(--gray-700);
+  font-weight: 500;
+}
+.scroll-down {
+  position: absolute;
+  bottom: 5rem;
+  transform: translateX(-50%);
+  left: 50%;
+  animation: scroll-down 0.8s alternate infinite ease-in-out;
+}
+@keyframes scroll-down {
+  from {
+    bottom: 2rem;
+  }
+  to {
+    bottom: 1rem;
+  }
+}

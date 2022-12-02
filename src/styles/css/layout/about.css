@@ -1,0 +1,27 @@
+.about-main {
+  background-color: var(--neutral-100);
+}
+.container {
+}
+.about-us__heading {
+}
+.about-us__container {
+}
+.about-us__img-wrapper {
+  margin-bottom: 4rem;
+}
+.about-us__paragraph {
+  text-indent: 3rem;
+  margin: 0;
+}
+.about-us__paragraph::first-letter {
+  font-size: 3rem;
+  line-height: 0;
+}
+@media (min-width: 60rem) {
+  .about-us__container {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 1rem;
+  }
+}

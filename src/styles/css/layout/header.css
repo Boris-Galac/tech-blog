@@ -1,0 +1,140 @@
+.header {
+  position: fixed;
+  inset: auto 0;
+  background-color: var(--white);
+  display: flex;
+  align-items: center;
+  padding-block: 1rem;
+  padding-inline: 2rem;
+  z-index: 50;
+  box-shadow: 0 0.1rem 1rem rgba(0, 0, 0, 0.3);
+}
+.logo {
+  min-width: 9rem;
+  margin-right: auto;
+}
+.header__list {
+  height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+  gap: 5rem;
+  inset: 0;
+  flex-direction: column;
+  position: absolute;
+  background-color: hsla(0, 0%, 99%, 0.8);
+  opacity: 0;
+  pointer-events: none;
+  scale: 0;
+}
+.header__list a {
+  color: var(--neutral-700);
+  position: relative;
+  font-weight: 500;
+  font-size: 2.5rem;
+  transition: 0.3s;
+}
+.current {
+  border-bottom: 2px solid #444;
+}
+.header__list a:hover {
+  scale: 1.2;
+}
+.header__list a::after {
+  content: "";
+  position: absolute;
+  scale: 1.2;
+  display: block;
+  border: 2px solid rgb(50, 52, 57);
+  width: 100%;
+  transform-origin: center;
+  transform: scaleX(0);
+  transition: 0.3s;
+  border-radius: 100vmax;
+}
+.header__list a:hover::after {
+  transform: scaleX(1);
+}
+.search-icon {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.header__ham {
+  position: relative;
+  aspect-ratio: 1;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  cursor: pointer;
+}
+.line {
+  width: 100%;
+  height: 2px;
+  border-radius: 100vmax;
+  background-color: var(--neutral-800);
+  transition: 0.3s;
+  pointer-events: none;
+}
+
+.line.active:nth-child(1) {
+  position: absolute;
+  rotate: 45deg;
+}
+.line.active:nth-child(2) {
+  position: absolute;
+  animation: ham 0.3s forwards;
+}
+@keyframes ham {
+  from {
+    margin-right: 100%;
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+.line.active:nth-child(3) {
+  rotate: -45deg;
+  position: absolute;
+}
+
+@media (min-width: 60rem) {
+  .header {
+    padding-block: 1.5rem;
+  }
+  .header__list {
+    height: auto;
+    text-align: center;
+    gap: 5rem;
+    inset: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    background-color: transparent;
+    margin-inline: auto;
+    width: fit-content;
+    opacity: 1;
+    pointer-events: visible;
+    scale: 1;
+  }
+  .header__list a {
+    position: relative;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: 0.3s;
+  }
+  .header__list a::after {
+    content: "";
+    position: absolute;
+    scale: 1.1;
+    display: block;
+    border: 1px solid rgb(50, 52, 57);
+    width: 100%;
+    transform-origin: center;
+    transform: scaleX(0);
+    transition: 0.3s;
+    border-radius: 100vmax;
+  }
+}
