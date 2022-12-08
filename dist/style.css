@@ -402,6 +402,17 @@ select {
     height: 100%;
   }
 }
+/* comments-wrapper
+comments
+comments-header
+comment-reply-title
+comment-respond
+logged-in-as
+logged-in-as a */
+.comment-form-comment textarea {
+  width: 100%;
+}
+/* form-submit */
 /* layout */
 .header {
   position: fixed;
@@ -839,7 +850,12 @@ select {
     grid-template-columns: 4fr 2fr;
   }
   .all-blogs__wrapper > :first-child {
-    grid-column: span 2;
+    grid-column: 1 / -1;
+  }
+  .all-blogs__wrapper > :first-child .blog-card__img {
+    max-height: 30rem;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
 }
 .single-blog {
@@ -1166,4 +1182,7 @@ select {
   height: 73vh;
   display: grid;
   place-content: center;
+}
+.comments-indicator:hover {
+  text-decoration: underline;
 }

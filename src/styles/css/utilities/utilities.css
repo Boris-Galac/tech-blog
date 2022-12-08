@@ -39,3 +39,6 @@
   display: grid;
   place-content: center;
 }
+.comments-indicator:hover {
+  text-decoration: underline;
+}

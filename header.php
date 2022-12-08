@@ -7,7 +7,7 @@
     <?php wp_head(); ?>
   </head>
 
-  <body<?php body_class(); ?>>
+  <body <?php body_class(); ?>>
     <!-- main -->
     <header class="header">
       <h1 class="logo">
@@ -23,7 +23,7 @@
           <li class="header__item">
             <a <?php if(get_post_type() === 'post') echo 'class="current"'; ?> href="<?php echo site_url('blog') ?>">Blog</a>
           </li>
-          <li class="header__item"><a href="#">Projects</a></li>
+          <li class="header__item"><a href="<?php echo site_url('contact') ?>">Contact</a></li>
           <li class="header__item"><a <?php if(is_page('about')) echo 'class="current"'; ?> href="<?php echo site_url('about')?>">About</a></li>
         </ul>
       </nav>

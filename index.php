@@ -19,40 +19,16 @@
           <div>
             <div class="all-blogs__wrapper">
               <?php
-                $paged = get_query_var('paged');
+                $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
                 $restPosts = new WP_query(array(
-                    'post_type'=>'project',
+                    'post_type'=>'post',
                     'paged'=> $paged,
                     
                   ));
                   while($restPosts->have_posts()){
                     $restPosts->the_post(); ?>
 
-<article class="blog-card">
-                    <a href="<?php the_permalink()?>">
-                        <img
-                        src="<?php the_post_thumbnail_url('blog-thumbnail')?>"
-                        alt="blog image"
-                        class="blog-card__img"
-                        />
-                    </a>
-                        <div class="blog-card__body">
-                        <div class="blog-card__info blog-info">
-                            <p><?php echo get_the_category_list(', ') ?></p>
-                            <span class="separator"></span>
-                            <div class="time"><?php the_time('F j, Y') ?></div>
-                        </div>
-                        <h3 class="blog-card__title"><?php the_title() ?></h3>
-                        <p class="blog-card__text paragraph">
-                        <?php echo wp_trim_words(get_the_content(), 30) ?>
-                        </p>
-                        <a
-                            href="<?php the_permalink() ?>"
-                            class="blog-card__read-more btn-primary"
-                            >read more</a
-                        >
-                        </div>
-              </article>
+                        <?php get_template_part('template-parts/content', 'blog') ?>
               <?php  
 ?>
               <?php  }

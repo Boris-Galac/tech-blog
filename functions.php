@@ -11,33 +11,34 @@ function setup(){
 
 add_action('wp_enqueue_scripts', 'setup');
 
-// project post type (custom query)
+// project post type (custom post type)
 
-function custom_post_type(){
-    $args = array(
-        'rewrite'=> array('slug'=>'projects'),
-        'show_in_rest' => true,
-        'labels'=> array(
-            'name'=>'Projects',
-            'singular_name'=> 'Project',
-            'add_new'=> 'Add New Project',
-            'edit_item'=>'Edit Project'
-        ),
-        'menu_icon'=>'dashicons-clipboard',
-        'taxonomies'  => array( 'category'),
-        'public'=> true,
-        'has_archive'=> true,
-        'supports'=> array(
-            'title', 'thumbnail', 'editor', 'excerpt', 'comments'
-        )
-    );
-    register_post_type('project',  $args);
+// function custom_post_type(){
+//     $args = array(
+//         'rewrite'=> array('slug'=>'projects'),
+//         'show_in_rest' => true,
+//         'labels'=> array(
+//             'name'=>'Projects',
+//             'singular_name'=> 'Project',
+//             'add_new'=> 'Add New Project',
+//             'edit_item'=>'Edit Project'
+//         ),
+//         'menu_icon'=>'dashicons-clipboard',
+//         'taxonomies'  => array( 'category'),
+//         'public'=> true,
+//         'has_archive'=> true,
+//         'supports'=> array(
+//             'title', 'thumbnail', 'editor', 'excerpt', 'comments'
+//         )
+//     );
+//     register_post_type('project',  $args);
     
-}
+// }
 
-add_action('init', 'custom_post_type');
+// add_action('init', 'custom_post_type');
 
 //// for title browser tab on which site we are
+
 function blog_features(){
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
@@ -45,3 +46,4 @@ function blog_features(){
 }
 
 add_action('after_setup_theme', 'blog_features');
+

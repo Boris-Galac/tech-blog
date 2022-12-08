@@ -21,6 +21,9 @@
               <p class="single-blog__category tag">
                 <?php echo get_the_category_list(', '); ?>
               </p>
+              <a href="<?php the_permalink() ?>"><?php comments_number()  ?></a>
+              
+
             </div>
             <div class="single-blog__row-1">
               <h1 class="single-blog__heading h2--heading">
@@ -34,9 +37,13 @@
               $replace = '<p class="single-blog__content paragraph">';
           
               echo str_replace('<p>', $replace, $phrase);
-              
               ?> 
             </div>
+
+            <!-- comment section -->
+
+            <?php comments_template(); ?>  
+            
           </article>
           <aside class="aside">
             <form role="search" class="aside__search-form">
@@ -81,7 +88,7 @@
           </aside>
         </section>
       </div>
-    </main>
+</main>
 
 
 <?php get_footer() ?>

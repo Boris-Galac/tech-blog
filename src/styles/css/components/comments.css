@@ -1,0 +1,11 @@
+/* comments-wrapper
+comments
+comments-header
+comment-reply-title
+comment-respond
+logged-in-as
+logged-in-as a */
+.comment-form-comment textarea {
+  width: 100%;
+}
+/* form-submit */

@@ -25,40 +25,20 @@
       <section class="recent-blogs" id="blog-section">
         <div class="container">
           <h2 class="recent-blogs__title h2--heading">recent blogs</h2>
-          <div class="recent-blogs__wrapper">
+          <div class="all-blogs__wrapper">
           <?php
 $args = [
- 'post_type' => 'project',
- 'posts_per_page' => 4
+ 'post_type' => 'post',
+ 'posts_per_page' => 3
 ];
 
 $posts = new WP_Query( $args );
 while($posts->have_posts()){
     $posts->the_post();
 ?>
-              <article class="blog-card">
-                <a href="<?php the_permalink() ?>">
-              <img
-              src="<?php
-              echo get_the_post_thumbnail_url(get_the_ID(), 'blog-thumbnail'); ?>"
-                  alt="blog image"
-                  class="blog-card__img"
-                />
-                </a>
-                <div class="blog-card__body">
-                  <div class="blog-card__info blog-info">
-                  <?php echo get_the_category_list(', '); ?><span class="separator"></span><?php the_time('F j, Y') ?>
-                  </div>
-                  <h3 class="blog-card__title"><?php the_title() ?></h3>
-                  <p class="blog-card__text paragraph">
-                    <?php echo wp_trim_words(get_the_content(), 30) ?>
-                  </p>
-                  <a href="<?php the_permalink() ?>" class="blog-card__read-more btn-primary"
-                    >read more</a
-                  >
-                </div>
-            </article>
+           <?php  get_template_part('template-parts/content', 'blog') ?>
 <?php } ?>
+<?php echo paginate_links() ?>
 <?php wp_reset_postdata(); ?>
 
       </section>
@@ -83,38 +63,7 @@ while($posts->have_posts()){
                   );
                   $posts = new WP_Query($args);
                   while($posts->have_posts()) : $posts->the_post(); ?>
-                    <article class="blog-card">
-                      <a href="<?php the_permalink() ?>">
-                      <?php if(has_post_thumbnail()){ ?>
-                          <img
-                          src="<?php 
-                          
-                          echo get_the_post_thumbnail_url(get_the_ID(), 'blog-thumbnail'); 
-                          ?>"
-                          alt="blog image"
-                          class="blog-card__img"
-                          />
-                          
-                          <?php } else { 
-                            $defaultImg = "/wp-content/themes/tech-blog/src/styles/images/default-blog-img.jpg.png"; 
-                            ?>
-                        <img src="<?php echo $defaultImg; ?>" alt="defalt image">
-                        </a>
-                        <?php }
-                      ?> 
-                      <div class="blog-card__body">
-                        <div class="blog-card__info blog-info">
-                        <?php echo get_the_category_list(', ') ?> <span class="separator"></span><?php the_time('F j, Y') ?>
-                        </div>
-                        <h3 class="blog-card__title"><?php the_title() ?></h3>
-                        <p class="blog-card__text paragraph">
-                        <?php echo wp_trim_words(get_the_content(), 30) ?>
-                        </p>
-                        <a href="<?php the_permalink() ?>" class="blog-card__read-more btn-primary"
-                          >read more</a
-                        >
-                      </div>
-                    </article>
+                           <?php  get_template_part('template-parts/content', 'blog') ?>
 
                  <?php endwhile; ?>
 
