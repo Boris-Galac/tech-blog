@@ -1,3 +1,6 @@
+.single-blogpost {
+  background-color: var(--neutral-100);
+}
 .single-blog {
   padding-block: 5rem;
 }

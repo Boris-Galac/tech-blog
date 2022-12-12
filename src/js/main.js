@@ -18,7 +18,7 @@ function paddingMain(page, main) {
     `;
   }
 }
-
+paddingMain("category", ".main");
 paddingMain("blog", ".second-main");
 paddingMain("about", ".about-main");
 
@@ -96,22 +96,38 @@ if (document.querySelector(".prev")) {
 }
 
 // snap scroll slider latest blogs
+if (indexPage) {
+  const left = document.querySelector(".latest-blogs__left-arrow");
+  const right = document.querySelector(".latest-blogs__right-arrow");
+  const scrollContainer = document.querySelector(".latest-blogs__wrapper");
 
-const left = document.querySelector(".latest-blogs__left-arrow");
-const right = document.querySelector(".latest-blogs__right-arrow");
-const scrollContainer = document.querySelector(".latest-blogs__wrapper");
+  right.addEventListener("click", (e) => {
+    scrollContainer.scrollBy({
+      top: 0,
+      left: 50,
+      behavior: "smooth",
+    });
+  });
 
-right.addEventListener("click", (e) => {
-  scrollContainer.scrollBy({
-    top: 0,
-    left: 50,
-    behavior: "smooth",
+  left.addEventListener("click", (e) => {
+    scrollContainer.scrollBy({
+      top: 0,
+      left: -50,
+      behavior: "smooth",
+    });
   });
-});
-left.addEventListener("click", (e) => {
-  scrollContainer.scrollBy({
-    top: 0,
-    left: -50,
-    behavior: "smooth",
-  });
-});
+}
+
+// placeholder
+
+function forSinglePostPage() {
+  // placeholder for comment textarea
+  document.querySelector("textarea#comment").placeholder = "Leave a comment...";
+  // padding top main
+  document.querySelector(".single-blogpost").style = `
+    padding-top: ${xy}px;
+    `;
+}
+if (document.body.classList.contains("single-post")) {
+  forSinglePostPage();
+}

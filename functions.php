@@ -47,3 +47,16 @@ function blog_features(){
 
 add_action('after_setup_theme', 'blog_features');
 
+// sidebar
+
+function widgets(){
+    register_sidebar(
+        array(
+            'name'=>'Main Sidebar',
+            'id'=>'main_sidebar',
+            'before_title'=>'<h3>',
+            'after_title'=>'</h3>',
+        )
+        );
+}
+add_action('widgets_init', 'widgets');

@@ -1,11 +1,119 @@
-/* comments-wrapper
-comments
-comments-header
-comment-reply-title
-comment-respond
-logged-in-as
-logged-in-as a */
+.comments-wrapper {
+}
+.comments-wrapper hr {
+  opacity: 0.5;
+  margin-block: 1rem;
+}
+.comments-wrapper textarea:focus {
+  background-color: rgb(239, 245, 245);
+}
+/* comments-header */
+.comment-reply-title {
+  color: var(--neutral-800);
+  margin-bottom: 1rem;
+}
+.logged-in-as {
+  color: var(--neutral-700);
+}
+.logged-in-as a {
+  text-decoration: underline;
+}
+.logged-in-as a:visited {
+  color: inherit;
+}
 .comment-form-comment textarea {
   width: 100%;
 }
-/* form-submit */
+.comments-wrapper textarea {
+  border: 1px solid rgb(83, 83, 83);
+  border-radius: 5px;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  transition: 0.15s;
+  padding: 1rem;
+}
+.comment-form-comment label {
+  display: none;
+}
+.submit {
+  background-color: var(--neutral-100);
+  color: rgb(0, 0, 0);
+  padding: 0.6rem 1.2rem !important;
+  transition: 0.15s;
+  cursor: pointer;
+  border: 2px solid #303030;
+  font-weight: 500;
+  margin-block: 1rem;
+}
+.submit:hover {
+  background-color: rgb(227, 230, 233);
+}
+
+/* inputs for visitor - comment respond*/
+
+.comment-respond form > :nth-child(n + 3):nth-child(-n + 5) {
+  width: 20vw;
+}
+.comment-respond form > :nth-child(n + 3):nth-child(-n + 5) input {
+  display: grid;
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+}
+
+/* responds comment */
+
+.comment-author {
+  padding: 0.5rem;
+  text-align: center;
+}
+span.says {
+  display: none;
+}
+.comments-inner > .comment {
+  position: relative;
+  display: grid;
+  background: hsl(206, 30%, 95%);
+  padding: 0.5rem;
+  padding-bottom: 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.544);
+
+  grid-template-columns: auto auto 1fr 1fr;
+  grid-template-rows: auto auto;
+}
+.comments-inner img {
+  aspect-ratio: 1;
+  border-radius: 50%;
+}
+.comments-inner {
+  display: grid;
+  gap: 1rem;
+}
+.comments-inner > .comment > p {
+  background: white;
+  grid-column: 2/-1;
+  padding: 0.5rem;
+}
+.comment-meta {
+  grid-column: 2;
+  grid-row: 2;
+  padding: 0.5rem;
+  place-self: center;
+}
+.comment-edit-link {
+  grid-column: 3;
+}
+.reply {
+  grid-column: 3;
+  grid-row: 2;
+}
+.comment-reply-link {
+  padding: 0.6rem 1.5rem;
+  color: var(--white);
+  background-color: var(--neutral-500);
+  margin-block: 0.3rem;
+  margin-inline: 2rem;
+  transition: 0.15s;
+}
+.comment-reply-link:hover {
+  background-color: var(--neutral-700);
+}

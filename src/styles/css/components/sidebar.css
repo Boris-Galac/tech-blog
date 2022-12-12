@@ -31,6 +31,9 @@
   display: grid;
   gap: 0.5rem;
 }
+.aside__category-list a {
+  color: #fff;
+}
 .aside__category-list li {
   display: flex;
   justify-content: space-between;

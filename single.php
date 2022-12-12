@@ -1,7 +1,7 @@
 <?php get_header() ?>
 <!-- main -->
 
-<main class="main second-main">
+<main class="main single-blogpost">
       <div class="container">
         <section class="single-blog-section">
           <article class="single-blog">
@@ -45,47 +45,7 @@
             <?php comments_template(); ?>  
             
           </article>
-          <aside class="aside">
-            <form role="search" class="aside__search-form">
-              <input
-                class="aside__search-input"
-                type="search"
-                aria-label="search"
-                placeholder="Search for a blog"
-              />
-            </form>
-            <div class="aside__categories">
-              <h3 class="aside__category-heading h3--heading">Categories</h3>
-              <div>
-                <ul class="aside__category-list">
-                  <li><span class="category-tag">Web</span><span>(2)</span></li>
-                  <li>
-                    <span class="category-tag">Software</span><span>(8)</span>
-                  </li>
-                  <li>
-                    <span class="category-tag">Gaming</span><span>(11)</span>
-                  </li>
-                  <li>
-                    <span class="category-tag">Hardware</span><span>(3)</span>
-                  </li>
-                  <li>
-                    <span class="category-tag">Technology</span
-                    ><span>(16)</span>
-                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="aside__tags">
-              <h3 class="aside__tags-heading h3--heading">Popular tags</h3>
-              <div class="aside__tag-wrapper">
-                <span class="aside__tag tag">Internet</span>
-                <span class="aside__tag tag">Shop</span>
-                <span class="aside__tag tag">Monitor</span>
-                <span class="aside__tag tag">Entertaiment</span>
-                <span class="aside__tag tag">Selling</span>
-              </div>
-            </div>
-          </aside>
+          <?php get_template_part('template-parts/content', 'sidebar') ?>
         </section>
       </div>
 </main>
