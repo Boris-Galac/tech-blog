@@ -138,5 +138,6 @@ function forSpecificPage(pageClass) {
       `;
   }
 }
+forSpecificPage("page-id-97");
 forSpecificPage("search");
 forSpecificPage("single-post");

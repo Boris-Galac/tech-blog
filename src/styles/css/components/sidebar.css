@@ -67,8 +67,24 @@
 .recent_post__body {
   padding: 0.5rem;
 }
+.recent_post__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.4rem;
+  border-bottom: 1px solid hsl(212, 20%, 71%);
+  margin-bottom: 0.5rem;
+}
 .recent_post__time {
   color: hsl(217, 7%, 23%);
+}
+.recent_post__category {
+  color: var(--neutral-100) !important;
+  background-color: rgb(130, 156, 176);
+  padding-inline: 0.4rem;
+  border-radius: 3px;
+}
+.recent_post__category a {
+  color: var(--neutral-100);
 }
 .recent_post__heading {
   text-transform: capitalize;

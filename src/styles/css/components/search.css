@@ -67,4 +67,5 @@
 .no-results__heading {
   font-size: 3rem;
   color: var(--neutral-700);
+  text-transform: capitalize;
 }

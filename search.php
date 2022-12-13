@@ -16,7 +16,7 @@
                                   ?>
                             <?php  }
                           }else{
-                            echo '<h1 class="no-results__heading">No Results</h1>';
+                            echo '<h1 class="no-results__heading">no results found</h1>';
                           }
               wp_reset_query();
               ?>

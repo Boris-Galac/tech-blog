@@ -1,0 +1,16 @@
+.contact-wrapper {
+  display: grid;
+  gap: 2rem;
+}
+
+.contact-img img {
+  object-fit: cover;
+  width: 100vmax;
+  height: 100%;
+}
+
+@media (min-width: 50rem) {
+  .contact-wrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}

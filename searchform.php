@@ -6,6 +6,7 @@
             aria-label="search"
             value="<?php echo get_search_query(); ?>"
             placeholder="Search for a blog..."
+            required
       />
       <!-- <input type="submit" value=""> -->
 </form>

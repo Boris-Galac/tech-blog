@@ -59,8 +59,13 @@ foreach( $terms as $term ) {
                                 <li>
                                     <article class="recent_post">
                                         <div class="recent_post__body">
-                                            <div class="recent_post__time">
-                                                <?php the_time('F j, Y') ?>
+                                            <div class="recent_post__meta">
+                                                <div class="recent_post__time">
+                                                    <?php the_time('F j, Y') ?>
+                                                </div>
+                                                <div class="recent_post__category">
+                                                    <?php echo get_the_category_list(', '); ?>
+                                                </div>
                                             </div>
                                             <h3 class="recent_post__heading">
                                                 <?php the_title() ?>
