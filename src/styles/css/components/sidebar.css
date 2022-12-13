@@ -52,3 +52,25 @@
     height: 100%;
   }
 }
+
+/* recent posts aside */
+
+.aside__recent-posts-list {
+  display: grid;
+  gap: 1rem;
+}
+.recent_post {
+  border-radius: 3px;
+  background-color: var(--neutral-400);
+  border-radius: 3px;
+}
+.recent_post__body {
+  padding: 0.5rem;
+}
+.recent_post__time {
+  color: hsl(217, 7%, 23%);
+}
+.recent_post__heading {
+  text-transform: capitalize;
+  color: #fff;
+}

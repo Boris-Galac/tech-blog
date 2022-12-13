@@ -15,6 +15,9 @@
 .blog-card__img {
   width: 100vmax;
 }
+.default-image {
+  width: 100vmax;
+}
 .blog-card__body {
   padding: var(--measure-1);
 }

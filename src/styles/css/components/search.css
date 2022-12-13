@@ -63,3 +63,8 @@
 .close-search:hover .close-search__icon::after {
   background-color: var(--gray-500);
 }
+/* if no results */
+.no-results__heading {
+  font-size: 3rem;
+  color: var(--neutral-700);
+}

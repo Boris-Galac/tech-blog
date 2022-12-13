@@ -13,7 +13,7 @@
                           <?php } else { 
                             $defaultImg = "/wp-content/themes/tech-blog/src/styles/images/default-blog-img.jpg.png"; 
                             ?>
-                        <img src="<?php echo $defaultImg; ?>" alt="defalt image">
+                        <img src="<?php echo $defaultImg; ?>" alt="defalt image" class="default-image">
                         </a>
                         <?php }
                       ?> 

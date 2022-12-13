@@ -1,6 +1,7 @@
 //////////// padding main
 
-const indexPage = document.location.pathname.length === 1;
+// const indexPage = document.location.pathname.length === 1;
+const indexPage = document.body.classList.contains("home");
 const xy = document.querySelector(".header").offsetHeight;
 
 if (indexPage) {
@@ -8,7 +9,6 @@ if (indexPage) {
   padding-top: ${xy}px;
   `;
 }
-
 function paddingMain(page, main) {
   window.location.pathname.includes(page);
   const xy = document.querySelector(".header").offsetHeight;
@@ -54,20 +54,25 @@ document.querySelector(".header__ham").addEventListener("click", (e) => {
 /////////// search
 
 document.querySelector(".search-icon").addEventListener("click", (e) => {
+  document.querySelector(".aside__search-form").focus();
+
   document.querySelector(".search-container").classList.add("active");
   document.querySelector(".search-container").classList.remove("deactive");
-
-  document.querySelector(".hero-banner__headline-wrapper").style = `
+  if (indexPage) {
+    document.querySelector(".hero-banner__headline-wrapper").style = `
     visibility: hidden;
     `;
+  }
 });
+
 document.querySelector(".close-search").addEventListener("click", (e) => {
   document.querySelector(".search-container").classList.remove("active");
   document.querySelector(".search-container").classList.add("deactive");
-
-  document.querySelector(".hero-banner__headline-wrapper").style = `
+  if (indexPage) {
+    document.querySelector(".hero-banner__headline-wrapper").style = `
     visibility: visible;
   `;
+  }
 });
 
 /////////// back to top
@@ -120,14 +125,18 @@ if (indexPage) {
 
 // placeholder
 
-function forSinglePostPage() {
+function forSpecificPage(pageClass) {
   // placeholder for comment textarea
-  document.querySelector("textarea#comment").placeholder = "Leave a comment...";
+  if (document.body.classList.contains("single-post")) {
+    document.querySelector("textarea#comment").placeholder =
+      "Leave a comment...";
+  }
   // padding top main
-  document.querySelector(".single-blogpost").style = `
-    padding-top: ${xy}px;
-    `;
+  if (document.body.classList.contains(pageClass)) {
+    document.querySelector(".main").style = `
+      padding-top: ${xy + 32}px;
+      `;
+  }
 }
-if (document.body.classList.contains("single-post")) {
-  forSinglePostPage();
-}
+forSpecificPage("search");
+forSpecificPage("single-post");

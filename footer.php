@@ -34,18 +34,7 @@
           <div class="close-search__icon"></div>
         </div>
       </div>
-      <form class="search-form">
-          <div class="search-form__input">
-              <input
-              type="search"
-              name="search"
-              id="search"
-              class="search-form__search"
-              placeholder="Search for something..."
-              />
-              <i class="fa-sharp fa-solid fa-magnifying-glass search-icon"></i>
-            </div>
-        </form>
+      <?php get_search_form(); ?>
     </div>
     <div class="back-to-top">
         <img src="/wp-content/themes/tech-blog/src/styles/icons/back-to-top.svg" alt="back to top">

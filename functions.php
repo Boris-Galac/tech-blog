@@ -1,6 +1,9 @@
 <?php 
 // prevent appearing <p> tag
+
     remove_filter('the_content', 'shortcode_unautop');
+
+
 // loading sources files
 
 function setup(){
@@ -54,9 +57,10 @@ function widgets(){
         array(
             'name'=>'Main Sidebar',
             'id'=>'main_sidebar',
-            'before_title'=>'<h3>',
-            'after_title'=>'</h3>',
+            'before_title'=>'',
+            'after_title'=>'',
         )
         );
 }
 add_action('widgets_init', 'widgets');
+

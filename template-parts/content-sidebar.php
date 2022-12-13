@@ -2,32 +2,26 @@
 
 
 <aside class="aside">
-            <form role="search" class="aside__search-form">
-              <input
-                class="aside__search-input"
-                type="search"
-                aria-label="search"
-                placeholder="Search for a blog"
-              />
-            </form>
+            <?php get_search_form(); ?>
             <div class="aside__categories">
-              <h3 class="aside__category-heading h3--heading">Categories</h3>
-              <div>
-                <ul class="aside__category-list">
-                    <?php
+                <h3 class="aside__category-heading h3--heading">Categories</h3>
+                <div>
+                    <ul class="aside__category-list">
+                        <?php
 
-                $terms = get_terms( array(
-                            'taxonomy'   => 'category', // taxonomy name
-                            'hide_empty' => true, 
-                    ));
+$terms = get_terms( array(
+    'taxonomy'   => 'category', // taxonomy name
+    'hide_empty' => true, 
+));
 
-                    foreach( $terms as $term ) {
-                        echo '<li><a href="'. get_term_link( $term ) .'">'. $term->name .'</a><span>('.$term->count.')</span></li>';
-                    }
-                    ?>
+foreach( $terms as $term ) {
+    echo '<li><a href="'. get_term_link( $term ) .'">'. $term->name .'</a><span>('.$term->count.')</span></li>';
+}
+?>
                 </ul>
-              </div>
             </div>
+        </div>
+        <?php dynamic_sidebar('main_sidebar') ?>
             <?php if(has_tag()){
                 ?>
                     <div class="aside__tags">
@@ -50,4 +44,36 @@
                 <?php
             }
             ?>
+            <div class="aside__recent-posts">
+                <ul class="aside__recent-posts-list">
+                    <?php
+                        $args = array(
+                            'post_type'=>'post',
+                            'posts_per_page'=>3
+                        );
+                        $posts = new WP_Query($args);
+                        if($posts->have_posts()){
+                            while($posts->have_posts()){
+                                $posts->the_post(); ?>
+
+                                <li>
+                                    <article class="recent_post">
+                                        <div class="recent_post__body">
+                                            <div class="recent_post__time">
+                                                <?php the_time('F j, Y') ?>
+                                            </div>
+                                            <h3 class="recent_post__heading">
+                                                <?php the_title() ?>
+                                            </h3>
+                                            <a href="<?php the_permalink() ?>">Read more...</a>
+                                        </div>
+                                    </article>
+                                </li>
+
+                            <?php }
+                        }
+                    
+                    ?>
+                </ul>
+            </div>
           </aside>

@@ -3,44 +3,27 @@
 
 <main class="main second-main">
 <div class="container">
-        <h2 class="all-blogs__heading h2--heading">all blogs projects</h2>
+        <h2 class="all-blogs__heading h2--heading"><?php the_archive_title() ?></h2>
         <div class="all-blog__container">
           <div>
             <div class="all-blogs__wrapper">
               <?php
-                $paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
-                $restPosts = new WP_query(array(
-                    'post_type'=>'post',
-                    'posts_per_page'=> 4,
-                    'paged'=> $paged,
-                    
-                  ));
-                  while($restPosts->have_posts()){
-                    $restPosts->the_post(); ?>
-
+              if(have_posts()){
+                  while(have_posts()){
+                    the_post(); ?>
                         <?php get_template_part('template-parts/content', 'blog') ?>
-              <?php  
-?>
-              <?php  }
-wp_reset_query();
-?>
-            </div>
-            <div class="pagination">
-              <div class="container">                
-                <div class="pagination__wrapper">
-              <?php 
-              $pages = array(
-                'total'=>$restPosts->max_num_pages
-              );
-              echo paginate_links($pages);
-    ?>
-                </div>
-              </div>
+                                  <?php  
+                                  ?>
+                            <?php  }
+                          }else{
+                            echo '<h1 class="no-results__heading">No Results</h1>';
+                          }
+              wp_reset_query();
+              ?>
             </div>
           </div>
           <div>
-          <?php get_template_part('template-parts/content', 'sidebar') ?>
-          
+            <?php get_template_part('template-parts/content', 'sidebar') ?>
           </div>
         </div>
       </div>

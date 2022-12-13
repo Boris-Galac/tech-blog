@@ -4,6 +4,7 @@
   margin-inline: auto;
   width: calc(100% - 32px);
   display: flow-root;
+  padding-bottom: 2rem;
 }
 
 /* 640px */
